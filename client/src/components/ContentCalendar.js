@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { postService } from '../services/api';
 import { toast } from 'react-toastify';
 import './ContentCalendar.css';
@@ -8,11 +8,7 @@ const ContentCalendar = () => {
   const [calendar, setCalendar] = useState(null);
   const [selectedWeek, setSelectedWeek] = useState(0);
 
-  useEffect(() => {
-    fetchCalendar();
-  }, [selectedWeek]);
-
-  const fetchCalendar = async () => {
+  const fetchCalendar = useCallback(async () => {
     setLoading(true);
     try {
       const response = await postService.getContentCalendar(selectedWeek);
@@ -23,7 +19,11 @@ const ContentCalendar = () => {
       toast.error('Failed to load content calendar');
       setLoading(false);
     }
-  };
+  }, [selectedWeek]);
+
+  useEffect(() => {
+    fetchCalendar();
+  }, [fetchCalendar]);
 
   if (loading) {
     return (

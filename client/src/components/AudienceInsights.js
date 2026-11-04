@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { postService } from '../services/api';
 import { toast } from 'react-toastify';
 import './AudienceInsights.css';
@@ -8,11 +8,7 @@ const AudienceInsights = () => {
   const [insights, setInsights] = useState(null);
   const [selectedPeriod, setSelectedPeriod] = useState('30d');
 
-  useEffect(() => {
-    fetchInsights();
-  }, [selectedPeriod]);
-
-  const fetchInsights = async () => {
+  const fetchInsights = useCallback(async () => {
     setLoading(true);
     try {
       const response = await postService.getAudienceInsights(selectedPeriod);
@@ -23,7 +19,11 @@ const AudienceInsights = () => {
       toast.error('Failed to load audience insights');
       setLoading(false);
     }
-  };
+  }, [selectedPeriod]);
+
+  useEffect(() => {
+    fetchInsights();
+  }, [fetchInsights]);
 
   if (loading) {
     return (

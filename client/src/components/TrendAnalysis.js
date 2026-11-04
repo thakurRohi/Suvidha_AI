@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { postService } from '../services/api';
 import { toast } from 'react-toastify';
 import './TrendAnalysis.css';
@@ -8,11 +8,7 @@ const TrendAnalysis = () => {
   const [trends, setTrends] = useState(null);
   const [selectedNiche, setSelectedNiche] = useState('general');
 
-  useEffect(() => {
-    fetchTrends();
-  }, [selectedNiche]);
-
-  const fetchTrends = async () => {
+  const fetchTrends = useCallback(async () => {
     setLoading(true);
     try {
       const response = await postService.getTrends(selectedNiche);
@@ -23,7 +19,11 @@ const TrendAnalysis = () => {
       toast.error('Failed to load trends');
       setLoading(false);
     }
-  };
+  }, [selectedNiche]);
+
+  useEffect(() => {
+    fetchTrends();
+  }, [fetchTrends]);
 
   if (loading) {
     return (

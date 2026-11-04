@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getImageUrl, postService } from '../services/api';
 import { toast } from 'react-toastify';
@@ -12,11 +12,7 @@ const PostDetail = () => {
   const [copiedCaption, setCopiedCaption] = useState(null);
   const [copiedHashtags, setCopiedHashtags] = useState(false);
 
-  useEffect(() => {
-    fetchPost();
-  }, [id]);
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const data = await postService.getPost(id);
       setPost(data);
@@ -26,7 +22,11 @@ const PostDetail = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id, navigate]);
+
+  useEffect(() => {
+    fetchPost();
+  }, [fetchPost]);
 
   const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text);
