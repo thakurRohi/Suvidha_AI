@@ -8,6 +8,7 @@ node_modules/
 
 # Production
 /build
+/client/build/
 /dist
 
 # Environment variables

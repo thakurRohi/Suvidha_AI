@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { postService } from '../services/api';
+import { getImageUrl, postService } from '../services/api';
 import { toast } from 'react-toastify';
 import './PostDetail.css';
 
@@ -66,7 +66,7 @@ const PostDetail = () => {
         <div className="detail-left">
           <div className="detail-image-card">
             <img
-              src={`http://localhost:5000${post.imageUrl}`}
+              src={getImageUrl(post.imageUrl)}
               alt={post.originalFileName}
               className="detail-image"
             />

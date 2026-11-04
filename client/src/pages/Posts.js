@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { postService } from '../services/api';
+import { getImageUrl, postService } from '../services/api';
 import { toast } from 'react-toastify';
 import './Posts.css';
 
@@ -63,7 +63,7 @@ const Posts = () => {
             <div key={post._id} className="post-card">
               <div className="post-image-container">
                 <img
-                  src={`http://localhost:5000${post.imageUrl}`}
+                  src={getImageUrl(post.imageUrl)}
                   alt={post.originalFileName}
                   className="post-image"
                 />

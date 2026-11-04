@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { postService } from '../services/api';
+import { getImageUrl, postService } from '../services/api';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -150,7 +150,7 @@ const Dashboard = () => {
               >
                 <div className="recent-post-image">
                   <img
-                    src={`http://localhost:5000${post.imageUrl}`}
+                    src={getImageUrl(post.imageUrl)}
                     alt={post.originalFileName}
                   />
                   <span className={`status-badge status-${post.status}`}>
