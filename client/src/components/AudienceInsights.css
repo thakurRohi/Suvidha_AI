@@ -1,0 +1,373 @@
+.insights-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.insights-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.insights-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.insights-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.period-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.insights-content {
+  display: grid;
+  gap: 30px;
+}
+
+.insights-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.overview-card h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.overview-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.overview-change {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.overview-change.positive {
+  color: #28a745;
+}
+
+.insights-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.insights-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.demographics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.demographic-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.demographic-card h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bar-label {
+  min-width: 60px;
+  font-weight: 500;
+  color: #555;
+}
+
+.bar {
+  flex: 1;
+  height: 20px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+  border-radius: 10px;
+}
+
+.bar-value {
+  min-width: 40px;
+  text-align: right;
+  font-weight: 600;
+  color: #007bff;
+}
+
+.gender-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gender-segment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gender-label {
+  min-width: 60px;
+  font-weight: 500;
+  color: #555;
+}
+
+.gender-bar {
+  flex: 1;
+  height: 24px;
+  background: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gender-fill {
+  height: 100%;
+  border-radius: 12px;
+}
+
+.gender-value {
+  min-width: 40px;
+  text-align: right;
+  font-weight: 600;
+  color: #333;
+}
+
+.locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.location-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.location-percentage {
+  font-weight: 600;
+  color: #007bff;
+}
+
+.engagement-patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.pattern-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.pattern-card h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.time-slot {
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.time {
+  display: block;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 4px;
+}
+
+.engagement {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.content-performance {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.performance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.content-type {
+  min-width: 80px;
+  font-weight: 500;
+  color: #555;
+}
+
+.performance-bar {
+  flex: 1;
+  height: 20px;
+  background: #e9ecef;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.performance-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745 0%, #1e7e34 100%);
+  border-radius: 10px;
+}
+
+.performance-value {
+  min-width: 40px;
+  text-align: right;
+  font-weight: 600;
+  color: #28a745;
+}
+
+.interests-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.interest-tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.interest-tag:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.opportunity-card {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+}
+
+.opportunity-card h4 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.opportunity-card p {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.potential {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .insights-container {
+    padding: 15px;
+  }
+
+  .insights-header h1 {
+    font-size: 2rem;
+  }
+
+  .insights-overview,
+  .demographics-grid,
+  .engagement-patterns,
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-cloud {
+    justify-content: flex-start;
+  }
+}
